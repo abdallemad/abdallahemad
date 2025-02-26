@@ -1,21 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+  font-family: "Cairo", sans-serif;
+}
+.direction-right {
+  direction: rtl;
+}
+.direction-left {
+  direction: ltr;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+@layer utilities {
+  body {
+    @apply bg-base-100 text-base-content;
+  }
+  /* ----------------Buttons----------- */
+  .shad-button {
+    @apply rounded-full bg-primary text-primary-content hover:bg-primary/70;
+  }
+  .shad-button-circle {
+    @apply w-36 h-36 lg:h-48 lg:w-48 md:w-40 md:h-40 lg:text-xl md:text-lg text-base  p-0 bg-zinc-900 text-primary-content rounded-full overflow-hidden font-semibold relative;
+  }
+  .shad-button-circle-icon {
+    @apply h-20 w-20 p-0 text-primary-content rounded-full overflow-hidden text-sm relative;
+  }
+  .normal-button {
+    @apply h-20 rounded-[5rem] overflow-hidden text-primary-content bg-zinc-900 px-8 block relative;
+  }
+  .inner-magnetic {
+    @apply absolute inset-0 flex items-center justify-center;
+  }
+  /* -------------------------------- */
+  /* ==========TEXT===========  */
+  .velocity-h1 {
+    @apply text-[calc(2.5rem+8vw)]  select-none pointer-events-none leading-[calc(3rem+9vw)] mt-auto
+  }
+  .main-about-p {
+    @apply flex flex-wrap gap-2 items-center font-semibold lg:max-w-[70%];
+    span {
+      @apply text-4xl inline-flex overflow-hidden relative;
+    }
+  }
+  .job-title-h2 {
+    @apply px-8 lg:px-16 text-[calc(1rem+1.5vw)] flex flex-col gap-24;
+  }
+  /* ======================== */
 }
