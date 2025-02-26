@@ -30,7 +30,7 @@ export const wrap = (min: number, max: number, v: number) => {
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
-export function VelocityScroll({
+function VelocityScroll({
   text,
   default_velocity = 5,
   className,
@@ -113,3 +113,4 @@ export function VelocityScroll({
     </section>
   );
 }
+export default VelocityScroll

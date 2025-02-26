@@ -1,5 +1,5 @@
 import Curve from "@/components/curve";
-import { VelocityScroll } from "@/pages/velocity-scroll";
+import VelocityScroll from "@/pages/velocity-scroll";
 import Navbar from "@/components/cuvred-menu/navbar";
 import ActionRoundedButton, { MenuButton, NormalButton } from "@/components/ui/buttons";
 import earthAnimation from "../../public/earth_location.json";
@@ -46,11 +46,11 @@ export default function Home() {
         </div>
 
         <div className="mt-auto">
-        <VelocityScroll
-          default_velocity={-1.6}
-          className="velocity-h1"
-          text=" عبداللّه عماد - مطور & مصمم تطبيقات ويب "
-        />
+          <VelocityScroll
+            default_velocity={-1.6}
+            className="velocity-h1"
+            text=" عبداللّه عماد - مطور & مصمم تطبيقات ويب "
+          />
         </div>
       </div>
       <AboutSection />
