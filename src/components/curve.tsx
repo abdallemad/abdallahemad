@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { anime, cn } from "@/lib/utils";
 import { motion, Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
@@ -129,12 +129,5 @@ function SVG({ width, height }: { width: number, height: number }) {
     </motion.svg>
   )
 }
-function anime(variants: Variants) {
-  return {
-    variants: variants,
-    initial: 'initial',
-    animate: 'enter',
-    exit: 'exit'
-  }
-}
+
 export default Curve

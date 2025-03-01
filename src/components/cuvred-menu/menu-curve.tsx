@@ -37,7 +37,7 @@ function MenuCurve() {
     },
   };
   return (
-    <svg className="absolute top-0 -right-[99px] w-[100px] h-full fill-zinc-900 stroke-none">
+    <svg className="curve">
       {height && (
         <motion.path
           variants={curve}

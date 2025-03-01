@@ -9,22 +9,24 @@ function Navbar() {
     const [isOpened, setIsOpened] = useState(false);
   
   return (
-    <header className=''>
+    <header>
       <CurvedMenu isOpened={isOpened} setIsOpened={setIsOpened}/>
-      <nav className=''>
-        <MaxWidthWrapper className='flex items-center justify-between py-6 lg:py-8'>
-          <Magnetic><h2 className='text-2xl font-semibold cursor-pointer select-none'>عبداللّه_عماد</h2></Magnetic>
-          <ul className="hidden gap-8 items-center sm:flex">
+      <nav>
+        <MaxWidthWrapper className='navbar'>
+          <Magnetic>
+            <Link href="/" className='logo-h1'>عبداللّه_عماد</Link>
+            </Magnetic>
+          <ul className="nav-links">
             {
               navLinks.filter(n => n.href !== '/').map(n => (
                 <Magnetic key={n.href}>
-                  <Link href={n.href} className=' text-xl'>{n.label}</Link>
+                  <Link href={n.href} className='py-2'>{n.label}</Link>
                 </Magnetic>
               ))
             }
           </ul>
           <Magnetic>
-            <button className='text-xl block sm:hidden cursor-pointer' onClick={() => setIsOpened(!isOpened)}>
+            <button className='menu-button' onClick={() => setIsOpened(!isOpened)}>
               القائمة
             </button>
           </Magnetic>

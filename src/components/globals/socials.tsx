@@ -7,8 +7,8 @@ import Magnetic from '../magnetic'
 function Socials({ className }: { className?: string }) {
   return (
     <div className={cn('flex flex-col gap-y-4', className)}>
-      <h2 className='text-gray-400 text-lg font-bold'>منصات التواصل</h2>
-      <ul className="flex items-center gap-4 text-white font-medium text-xl">
+      <h2 className='text-gray-400 md:text-lg'>منصات التواصل</h2>
+      <ul className="flex items-center flex-wrap gap-4 text-white font-medium lg:text-lg">
         {socials.map(s => (
           <Magnetic key={s.label}><a target='_blank' href={s.href}>{s.label}</a></Magnetic>
         ))}

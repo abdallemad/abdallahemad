@@ -11,8 +11,8 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        
         <link rel="icon" href="/favicon.ico"  />
-        <title>Portfolio</title>
       </Head>
       <body className="antialiased font-cairo">
         <Main />

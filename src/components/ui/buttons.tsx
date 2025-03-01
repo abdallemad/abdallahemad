@@ -5,7 +5,7 @@ import Magnetic from '../magnetic'
 import BackDrop from './backdrop-slide'
 import { cn } from '@/lib/utils'
 
-function ActionRoundedButton({ className }: { className?: string }) {
+function ActionRoundedButton({ className, href }: { className?: string; href: string }) {
   const [hovered, setHovered] = useState(false);
   return (
     <Magnetic>
@@ -15,7 +15,7 @@ function ActionRoundedButton({ className }: { className?: string }) {
         className={cn("shad-button-circle", className)}
       >
         <Magnetic>
-          <Link href="#" className="inner-magnetic">
+          <Link href={href} className="inner-magnetic">
             المزيد
           </Link>
         </Magnetic>
@@ -39,10 +39,10 @@ export function MenuButton({ className, isOpened = false, close }: { className?:
         <Magnetic>
           <span className="inner-magnetic">
             <div className="flex flex-col gap-2 h-full w-full items-center justify-center">
-              <span className={cn("h-px bg-white w-8 transition-all duration-400", {
+              <span className={cn("h-px bg-white md:w-8 w-6 transition-all duration-400", {
                 'rotate-45 translate-y-1': isOpened
               })}></span>
-              <span className={cn("h-px bg-white w-8 transition-all duration-400", {
+              <span className={cn("h-px bg-white md:w-8 w-6 transition-all duration-400", {
                 '-rotate-45 -translate-y-1': isOpened
               })}></span>
             </div>
@@ -65,7 +65,7 @@ export function NormalButton() {
         className="normal-button w-40"
       >
         <Magnetic>
-          <Link href="#" className="inner-magnetic ">
+          <Link href={'href'} className="inner-magnetic ">
             more about me
           </Link>
         </Magnetic>

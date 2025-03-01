@@ -1,12 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap");
 body {
   direction: rtl;
   font-family: "Cairo", sans-serif;
 }
 .direction-right {
   direction: rtl;
+}
+.font-noto{
+  font-family: 'Noto Nastaliq Urdu';
 }
 .direction-left {
   direction: ltr;
@@ -39,7 +43,7 @@ body {
     @apply w-36 h-36 lg:h-48 lg:w-48 md:w-40 md:h-40 lg:text-xl md:text-lg text-base  p-0 bg-zinc-900 text-primary-content rounded-full overflow-hidden font-semibold relative;
   }
   .shad-button-circle-icon {
-    @apply h-20 w-20 p-0 text-primary-content rounded-full overflow-hidden text-sm relative;
+    @apply md:h-20 md:w-20 size-14 p-0 text-primary-content rounded-full overflow-hidden text-sm relative;
   }
   .normal-button {
     @apply h-20 rounded-[5rem] overflow-hidden text-primary-content bg-zinc-900 px-8 block relative;
@@ -50,16 +54,57 @@ body {
   /* -------------------------------- */
   /* ==========TEXT===========  */
   .velocity-h1 {
-    @apply text-[calc(2.5rem+8vw)]  select-none pointer-events-none leading-[calc(3rem+9vw)] mt-auto
+    @apply text-[calc(4rem+8vw)]  select-none pointer-events-none leading-[calc(5rem+9.4vw)] font-semibold font-noto;
   }
   .main-about-p {
-    @apply flex flex-wrap gap-2 items-center font-semibold lg:max-w-[70%];
+    @apply flex flex-wrap gap-2 items-center font-[600];
     span {
-      @apply text-4xl inline-flex overflow-hidden relative;
+      @apply text-[calc(1.4rem+0.5vw)] inline-flex overflow-hidden relative;
     }
   }
-  .job-title-h2 {
-    @apply px-8 lg:px-16 text-[calc(1rem+1.5vw)] flex flex-col gap-24;
-  }
   /* ======================== */
+
+  /* ==========navbar=========== */
+  .navbar {
+    @apply flex items-center justify-between pt-10 lg:pt-12;
+  }
+  .logo-h1 {
+    @apply lg:text-xl text-base cursor-pointer select-none font-bold;
+  }
+  .nav-links {
+    @apply hidden gap-8 items-center sm:flex font-medium;
+  }
+  .menu-button {
+    @apply lg:text-xl text-sm font-bold block sm:hidden cursor-pointer;
+  }
+  /* ================================= */
+  /* ==============hero============== */
+  .hero {
+    @apply min-h-screen bg-[#999d9e] text-white select-none relative flex flex-col;
+  }
+  .hero-image {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 select-none pointer-events-none h-[95dvh] w-auto;
+  }
+  .location-container-lg {
+    @apply md:flex items-center justify-between pt-20 z-50 hidden mt-auto;
+    .location-span {
+      @apply pr-8 pl-3 self-end lg:pr-16 flex items-center gap-8 bg-zinc-900 text-white text-lg rounded-l-full;
+      span {
+        @apply py-8 inline-flex;
+      }
+    }
+  }
+  .location-lottie {
+    @apply size-24 grid place-items-center relative bg-zinc-400 rounded-full;
+  }
+  .job-title-h2 {
+    @apply px-8 lg:px-16 text-[calc(1rem+1.5vw)] flex flex-col gap-8;
+  }
+  .arrow-lg {
+    @apply size-12 rotate-45 stroke-1;
+  }
+  .location-container-sm {
+    @apply flex flex-row-reverse items-center justify-between z-50 pb-6 pt-8 md:hidden;
+  }
+  /* ================================ */
 }

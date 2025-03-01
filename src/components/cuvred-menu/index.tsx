@@ -5,6 +5,8 @@ import BackDrop from "../ui/backdrop-slide";
 import Menu from "./menu";
 import { cn } from "@/lib/utils";
 import { MenuButton } from "../ui/buttons";
+import { anime } from "@/lib/utils";
+import { FADE_IN_OUT, SCALE_UP_DOWN } from "@/lib/anim";
 
 interface Props {
   setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
@@ -31,25 +33,26 @@ function CurvedMenu({ isOpened, setIsOpened }: Props) {
         {
           (showSidebarButton || isOpened) && (
             <motion.div
-              variants={{
-                show: { scale: 1, opacity: 1 },
-                hide: { scale: 0, opacity: 0 },
-              }}
+              {...anime(SCALE_UP_DOWN)}
               transition={{
                 duration: 0.3,
                 ease: [0.76, 0, 0.24, 1],
               }}
-              initial="hide"
-              animate="show"
-              exit="hide"
-              className="fixed top-6 left-8 z-50"
+              className="fixed w-fit top-14 left-14 z-[9999]"
             >
-              <MenuButton close={close} isOpened={isOpened}/>
+              <MenuButton close={close} isOpened={isOpened} />
             </motion.div>
           )
         }
       </AnimatePresence>
-      <AnimatePresence mode="wait">{isOpened && <Menu close={close} />}</AnimatePresence>
+      <AnimatePresence mode="wait">{
+        isOpened && (
+          <>
+            <Menu close={close} />
+            <motion.div {...anime(FADE_IN_OUT)} onClick={close}  className="backdrop-menu"/>
+          </>
+        )
+      }</AnimatePresence>
     </>
   );
 }
