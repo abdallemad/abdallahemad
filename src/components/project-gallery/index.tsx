@@ -58,7 +58,7 @@ function ProjectGallery({ projects }: Props) {
           {
             isLarge ?
               (<LargeGallery setOpen={setModalOpen} projects={projects} setIndex={setIndex} />)
-              : (<SmallGallery projects={projects} />)
+              : (<SmallGallery setOpen={setModalOpen} projects={projects} />)
           }
         </div>
 
