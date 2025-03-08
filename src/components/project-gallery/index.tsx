@@ -7,6 +7,7 @@ import SmallGallery from './small-gallery';
 import Modals from './modal';
 import { AnimatePresence, useMotionValue } from 'motion/react';
 import MaxWidthWrapper from '../globals/max-width-wrapper';
+import { NormalButton } from '../ui/buttons';
 
 interface Props {
   projects: Project[];
@@ -61,8 +62,14 @@ function ProjectGallery({ projects }: Props) {
               : (<SmallGallery setOpen={setModalOpen} projects={projects} />)
           }
         </div>
-
       </MaxWidthWrapper >
+      <div className='flex items-center justify-center'>
+        <NormalButton href='/work'>
+          <span className='group-hover:text-primary-content'>
+            المزيد
+          </span>
+        </NormalButton>
+      </div>
     </div>
   )
 }

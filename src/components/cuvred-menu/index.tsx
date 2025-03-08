@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useState } from "react";
-import Magnetic from "../magnetic";
-import BackDrop from "../ui/backdrop-slide";
+import Magnetic from "../globals/magnetic";
+import BackDrop from "../globals/backdrop-slide";
 import Menu from "./menu";
 import { cn } from "@/lib/utils";
 import { MenuButton } from "../ui/buttons";

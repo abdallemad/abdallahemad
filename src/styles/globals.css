@@ -46,7 +46,10 @@ body {
     @apply md:h-20 md:w-20 size-14 p-0 text-primary-content rounded-full overflow-hidden text-sm relative;
   }
   .normal-button {
-    @apply h-20 rounded-[5rem] overflow-hidden text-primary-content bg-zinc-900 px-8 block relative;
+    @apply h-20 rounded-[5rem] overflow-hidden  bg-transparent border-2 px-8 block relative
+  }
+  .normal-button span{
+    @apply  font-bold text-lg transition duration-500
   }
   .inner-magnetic {
     @apply absolute inset-0 flex items-center justify-center;

@@ -74,3 +74,14 @@ export const FADE_IN_OUT: Variants = {
     },
   },
 };
+export const backDropSlideVariants = {
+  initial: {
+    top: '140%'
+  },
+  enter: {
+    top: '-20%'
+  },
+  exit: {
+    top: '-140%'
+  }
+}

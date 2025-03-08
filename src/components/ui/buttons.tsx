@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'motion/react'
 import Link from 'next/link'
 import { useState } from 'react'
-import Magnetic from '../magnetic'
-import BackDrop from './backdrop-slide'
+import Magnetic from '../globals/magnetic'
+import BackDrop from '../globals/backdrop-slide'
 import { cn } from '@/lib/utils'
 
 function ActionRoundedButton({ className, href }: { className?: string; href: string }) {
@@ -55,18 +55,18 @@ export function MenuButton({ className, isOpened = false, close }: { className?:
     </Magnetic>
   )
 }
-export function NormalButton() {
+export function NormalButton({href,children}:{href:string; children:React.ReactNode}) {
   const [hovered, setHovered] = useState(false);
   return (
     <Magnetic>
       <button
         onMouseOver={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="normal-button w-40"
+        className="normal-button w-40 group"
       >
         <Magnetic>
-          <Link href={'href'} className="inner-magnetic ">
-            more about me
+          <Link href={href} className="inner-magnetic ">
+            {children}
           </Link>
         </Magnetic>
         <AnimatePresence mode="wait">

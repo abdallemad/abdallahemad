@@ -20,12 +20,13 @@ function SmallGallery({ projects,setOpen }: Props) {
               style={{
                 background: p.background
               }}
-              className="aspect-square w-full grid place-content-center">
+              className="aspect-square px-4 w-full grid place-content-center">
                 <Image
                   src={p.assets[0]}
                   alt={p.name}
                   width={400}
-                  height={400} />
+                  height={400}
+                  className='w-full' />
               </div>
               <div className='flex flex-col gap-3'>
                 <h3 className='text-2xl font-bold'>{p.name}</h3>

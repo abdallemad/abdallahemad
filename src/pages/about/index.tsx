@@ -1,5 +1,5 @@
 import React from 'react'
-import Curve from '@/components/curve'
+import Curve from '@/components/globals/curve'
 import Navbar from '@/components/cuvred-menu/navbar'
 
 function About() {
