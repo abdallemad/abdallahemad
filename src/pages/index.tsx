@@ -3,8 +3,8 @@ import ProjectGallery from "@/components/project-gallery";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Projects } from "@/lib/constants";
-import { AboutSection } from "./_components/about";
-import { Hero } from "./_components/hero";
+import { AboutSection } from "../components/_components/about";
+import { Hero } from "../components/_components/hero";
 
 
 export default function Home() {
